@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saúco Shop | Finalizar Compra</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Crimson+Pro:wght@300;400;600&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="Pago.css" />
+</head>
+<body>
+
+  <!-- ====== NAVBAR ====== -->
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <img src="Sauco/IMAGEN1.jpeg" alt="Saúco" class="nav-icono" />
+      <span>Saúco <em>Shop</em></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#sobre">El Saúco</a></li>
+      <li><a href="index.html#cosecha">Cosecha</a></li>
+      <li><a href="index.html#departamento">Origen</a></li>
+      <li><a href="index.html#galeria">Fotos</a></li>
+      <li><a href="index.html#productos">Productos</a></li>
+      <li><a href="index.html#beneficios">Beneficios</a></li>
+      <li><a href="index.html#productos" class="btn-tienda">🛒 Tienda</a></li>
+      <li>
+        <a href="pago.html" class="btn-carrito-nav" id="btnCarritoNav">
+          <span class="carrito-icono">🧺</span>
+          <span class="carrito-texto">Carrito</span>
+          <span class="carrito-badge" id="carritoBadge">0</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- ====== NOTIFICACIÓN PENDIENTE ====== -->
+  <div class="notif-banner" id="notifBanner">
+    <span class="notif-icono">🛒</span>
+    <span class="notif-texto">Tienes productos en tu carrito. <strong>¡Finaliza tu compra!</strong></span>
+    <a href="pago.html" class="notif-btn">Ir al carrito →</a>
+    <button class="notif-cerrar" onclick="cerrarNotif()">✕</button>
+  </div>
+
+  <!-- ====== HERO PAGO ====== -->
+  <section class="hero-pago">
+    <div class="hero-pago-bg">
+      <span></span><span></span><span></span>
+    </div>
+    <div class="hero-pago-content">
+      <div class="hero-etiqueta">🧺 Tu pedido · Saúco Shop</div>
+      <h1>Finalizar <em>Compra</em></h1>
+      <p class="hero-sub">Estás a un paso de recibir productos artesanales de Chimaltenango en tu hogar.</p>
+    </div>
+  </section>
+
+  <!-- ====== CONTENIDO PRINCIPAL ====== -->
+  <main class="checkout-main">
+
+    <!-- ===== COLUMNA IZQUIERDA: RESUMEN ===== -->
+    <div class="checkout-left">
+      <div class="resumen-card">
+        <h2 class="resumen-titulo">📦 Resumen del pedido</h2>
+        <div class="resumen-items" id="resumenItems">
+          <!-- Se genera con JS -->
+        </div>
+        <div class="resumen-vacio" id="resumenVacio" style="display:none;">
+          <span>🛒</span>
+          <p>Tu carrito está vacío.</p>
+          <a href="index.html#productos" class="btn-volver">Ver productos →</a>
+        </div>
+        <div class="resumen-totales" id="resumenTotales">
+          <div class="total-row">
+            <span>Subtotal</span>
+            <span id="subtotalValor">Q0.00</span>
+          </div>
+          <div class="total-row">
+            <span>Envío</span>
+            <span class="envio-gratis">Gratis 🎉</span>
+          </div>
+          <div class="total-row total-final">
+            <span>Total</span>
+            <span id="totalValor">Q0.00</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- INFO ENTREGA -->
+      <div class="entrega-card">
+        <h3>📍 Información de entrega</h3>
+        <div class="entrega-form">
+          <div class="form-group">
+            <label>Nombre completo</label>
+            <input type="text" id="nombreEntrega" placeholder="Ej. María García López" />
+          </div>
+          <div class="form-group">
+            <label>Teléfono</label>
+            <input type="tel" id="telefonoEntrega" placeholder="+502 0000-0000" />
+          </div>
+          <div class="form-group">
+            <label>Dirección de entrega</label>
+            <input type="text" id="direccionEntrega" placeholder="Colonia, municipio, departamento" />
+          </div>
+          <div class="form-group">
+            <label>Nota adicional (opcional)</label>
+            <textarea id="notaEntrega" placeholder="Instrucciones especiales para la entrega..." rows="3"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== COLUMNA DERECHA: PAGO ===== -->
+    <div class="checkout-right">
+      <div class="pago-card">
+        <h2 class="pago-titulo">💳 Método de pago</h2>
+        <p class="pago-subtitulo">Selecciona cómo deseas pagar tu pedido</p>
+
+        <!-- SELECTOR DE MÉTODO -->
+        <div class="metodos-pago">
+
+          <!-- EFECTIVO -->
+          <div class="metodo-item" id="metodoCash" onclick="seleccionarMetodo('cash')">
+            <div class="metodo-radio" id="radioCash"></div>
+            <div class="metodo-icono-wrap metodo-cash">💵</div>
+            <div class="metodo-info">
+              <h4>Pago en efectivo</h4>
+              <p>Al momento de entregar tu producto</p>
+            </div>
+            <span class="metodo-tag">Popular</span>
+          </div>
+
+          <!-- TARJETA -->
+          <div class="metodo-item" id="metodoCard" onclick="seleccionarMetodo('card')">
+            <div class="metodo-radio" id="radioCard"></div>
+            <div class="metodo-icono-wrap metodo-card">💳</div>
+            <div class="metodo-info">
+              <h4>Tarjeta de crédito/débito</h4>
+              <p>Visa, Mastercard, American Express</p>
+            </div>
+            <div class="card-logos">
+              <span>VISA</span>
+              <span>MC</span>
+              <span>AMEX</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- PANEL EFECTIVO -->
+        <div class="panel-metodo" id="panelCash" style="display:none;">
+          <div class="efectivo-info">
+            <div class="efectivo-icono">💵</div>
+            <h3>Pago contra entrega</h3>
+            <p>Tu pedido será procesado y entregado en tu dirección. El pago se realiza <strong>en efectivo</strong> directamente al repartidor al momento de recibir tu pedido.</p>
+            <ul class="efectivo-pasos">
+              <li><span class="paso-num">1</span> Confirmamos tu pedido por WhatsApp</li>
+              <li><span class="paso-num">2</span> Preparamos y enviamos tus productos</li>
+              <li><span class="paso-num">3</span> Pagas al recibir en tu puerta</li>
+            </ul>
+            <div class="efectivo-aviso">
+              ⏱️ Tiempo estimado de entrega: <strong>2–4 días hábiles</strong> en Guatemala
+            </div>
+          </div>
+        </div>
+
+        <!-- PANEL TARJETA -->
+        <div class="panel-metodo" id="panelCard" style="display:none;">
+          <div class="tarjeta-visual" id="tarjetaVisual">
+            <div class="tarjeta-chip">▬</div>
+            <div class="tarjeta-numero" id="tvNumero">•••• •••• •••• ••••</div>
+            <div class="tarjeta-datos">
+              <div>
+                <span class="tarjeta-label">Titular</span>
+                <span class="tarjeta-valor" id="tvNombre">NOMBRE APELLIDO</span>
+              </div>
+              <div>
+                <span class="tarjeta-label">Vence</span>
+                <span class="tarjeta-valor" id="tvVence">MM/AA</span>
+              </div>
+            </div>
+            <div class="tarjeta-logo">VISA</div>
+          </div>
+
+          <div class="form-tarjeta">
+            <div class="form-group">
+              <label>Número de tarjeta</label>
+              <div class="input-icon-wrap">
+                <input type="text" id="numTarjeta" placeholder="0000 0000 0000 0000" maxlength="19"
+                  oninput="formatearTarjeta(this)" />
+                <span class="input-icon">💳</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Nombre del titular</label>
+              <input type="text" id="nomTarjeta" placeholder="Como aparece en la tarjeta"
+                oninput="actualizarNombre(this)" style="text-transform:uppercase;" />
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Fecha de vencimiento</label>
+                <input type="text" id="venceTarjeta" placeholder="MM/AA" maxlength="5"
+                  oninput="formatearVence(this)" />
+              </div>
+              <div class="form-group">
+                <label>CVV / CVC</label>
+                <div class="input-icon-wrap">
+                  <input type="password" id="cvvTarjeta" placeholder="•••" maxlength="4" />
+                  <span class="input-icon tooltip-icon" title="3 dígitos al dorso de tu tarjeta">?</span>
+                </div>
+              </div>
+            </div>
+            <div class="seguridad-aviso">
+              🔒 Tus datos están protegidos con encriptación SSL de 256 bits
+            </div>
+          </div>
+        </div>
+
+        <!-- BOTÓN CONFIRMAR -->
+        <button class="btn-confirmar" id="btnConfirmar" onclick="confirmarCompra()">
+          <span id="btnTexto">Selecciona un método de pago</span>
+          <span class="btn-flecha">→</span>
+        </button>
+
+        <p class="pago-garantia">✅ Compra garantizada · Envíos a todo Guatemala · Productos 100% naturales</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- ====== MODAL ÉXITO ====== -->
+  <div class="modal-overlay" id="modalExito" style="display:none;">
+    <div class="modal-exito">
+      <!-- Confetti canvas -->
+      <canvas id="confettiCanvas"></canvas>
+
+      <div class="exito-circulo" id="exitoCirculo">
+        <svg class="exito-check" viewBox="0 0 52 52">
+          <circle class="check-circle" cx="26" cy="26" r="25" fill="none"/>
+          <path class="check-path" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+        </svg>
+      </div>
+
+      <h2 class="exito-titulo">¡Compra realizada!</h2>
+      <p class="exito-sub" id="exitoSub">Tu pedido ha sido procesado exitosamente.</p>
+
+      <div class="exito-detalle" id="exitoDetalle">
+        <!-- Se llena con JS -->
+      </div>
+
+      <div class="exito-numero">
+        Número de pedido: <strong id="numeroPedido">#SAU-000</strong>
+      </div>
+
+      <div class="exito-acciones">
+        <a href="index.html" class="btn-inicio">← Volver al inicio</a>
+        <button class="btn-whatsapp" onclick="contactarWS()">📲 Confirmar por WhatsApp</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast"></div>
+
+  <script src="pago.js"></script>
+</body>
+</html>

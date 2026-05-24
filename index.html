@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saúco Shop | Chimaltenango</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Crimson+Pro:wght@300;400;600&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ====== NAVBAR ====== -->
+  <nav>
+    <a href="#" class="nav-logo">
+      <img src="Sauco/IMAGEN1.jpeg" alt="Saúco" class="nav-icono" />
+      <span>Saúco <em>Shop</em></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#sobre">El Saúco</a></li>
+      <li><a href="#cosecha">Cosecha</a></li>
+      <li><a href="#departamento">Origen</a></li>
+      <li><a href="#galeria">Fotos</a></li>
+      <li><a href="#productos">Productos</a></li>
+      <li><a href="#beneficios">Beneficios</a></li>
+      <li><a href="#productos" class="btn-carrito">🛒 Tienda</a></li>
+      <!-- BOTÓN CARRITO CON BADGE -->
+      <li>
+        <a href="pago.html" class="btn-carrito-nav" id="btnCarritoNav">
+          <span class="carrito-icono">🧺</span>
+          <span class="carrito-texto">Carrito</span>
+          <span class="carrito-badge" id="carritoBadge">0</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- BANNER NOTIFICACIÓN CARRITO -->
+  <div class="notif-banner" id="notifBanner">
+    <span class="notif-icono">🛒</span>
+    <span class="notif-texto">Tienes productos en tu carrito. <strong>¡Finaliza tu compra!</strong></span>
+    <a href="pago.html" class="notif-btn">Ir al carrito →</a>
+    <button class="notif-cerrar" onclick="cerrarNotif()">✕</button>
+  </div>
+
+  <!-- ====== HERO ====== -->
+  <section class="hero">
+    <div class="hero-bg-circles">
+      <span></span><span></span><span></span>
+    </div>
+    <div class="hero-content">
+      <div class="hero-etiqueta">🌺 Cosecha artesanal · Chimaltenango, Guatemala</div>
+      <h1>
+        El Poder del
+        <em>Saúco</em>
+      </h1>
+      <p class="hero-sub">
+        Naturaleza pura desde las tierras altas de Chimaltenango. Productos 100% artesanales elaborados con el Sambucus mexicana más fino de Guatemala.
+      </p>
+      <div class="hero-btns">
+        <a href="#productos" class="btn-primary">Ver productos →</a>
+        <a href="#sobre" class="btn-secondary">Conocer más</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Explorar</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ====== SOBRE EL SAUCO ====== -->
+  <section class="sobre" id="sobre">
+    <div class="sobre-grid">
+      <div class="sobre-visual">
+        <div class="sobre-card-img">
+          <img src="Sauco/IMAGEN3.jpeg" alt="Sauco Shop - Chimaltenango" />
+          <div class="overlay-texto">Sambucus mexicana · Chimaltenango</div>
+        </div>
+        <div class="badge-flotante">
+          +500<br/>años
+          <small>de uso ancestral</small>
+        </div>
+      </div>
+      <div class="sobre-info">
+        <span class="seccion-etiqueta">¿Qué es el Saúco?</span>
+        <h2 class="seccion-titulo">La planta sagrada de los <em>Altos de Guatemala</em></h2>
+        <p class="seccion-texto">
+          El Saúco (<em>Sambucus mexicana</em>) es un árbol medicinal nativo de las tierras altas de Mesoamérica. Sus flores blancas en forma de paraguas y sus bayas color morado intenso han sido utilizadas por comunidades indígenas guatemaltecas por más de cinco siglos para tratar enfermedades, elaborar bebidas y producir alimentos naturales.
+        </p>
+        <p class="seccion-texto" style="margin-top:16px;">
+          En Chimaltenango crece de forma silvestre y cultivada entre los 1,800 y 2,600 metros sobre el nivel del mar, donde el clima frío y húmedo favorece el desarrollo de sus compuestos activos más potentes.
+        </p>
+        <div class="datos-rapidos">
+          <div class="dato-card">
+            <div class="dato-icono">🌡️</div>
+            <h4>Clima ideal</h4>
+            <p>Frío-templado 12–18°C</p>
+          </div>
+          <div class="dato-card">
+            <div class="dato-icono">⛰️</div>
+            <h4>Altitud</h4>
+            <p>1,800 – 2,600 msnm</p>
+          </div>
+          <div class="dato-card">
+            <div class="dato-icono">📅</div>
+            <h4>Temporada</h4>
+            <p>Nov – Feb (flores)<br>Mar – May (frutos)</p>
+          </div>
+          <div class="dato-card">
+            <div class="dato-icono">🌍</div>
+            <h4>Nombre científico</h4>
+            <p>Sambucus mexicana</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== COSECHA ====== -->
+  <section class="cosecha" id="cosecha">
+    <div class="cosecha-inner">
+      <div class="cosecha-header">
+        <div class="cosecha-intro">
+          <span class="seccion-etiqueta">Historia & Tradición</span>
+          <h2 class="seccion-titulo">¿Desde cuándo se <em>cosecha</em>?</h2>
+          <p class="seccion-texto">
+            El Saúco lleva siglos de historia en las tierras mayas. Desde la época prehispánica los pueblos del altiplano guatemalteco conocían sus propiedades y lo cultivaban cerca de sus aldeas. Hoy esa tradición vive en cada familia de Chimaltenango que hereda el conocimiento de sus ancestros.
+          </p>
+          <div class="cosecha-stats">
+            <div class="stat-box"><div class="stat-num">500+</div><div class="stat-desc">Años de tradición</div></div>
+            <div class="stat-box"><div class="stat-num">200+</div><div class="stat-desc">Familias cosechadoras</div></div>
+            <div class="stat-box"><div class="stat-num">2</div><div class="stat-desc">Cosechas al año</div></div>
+          </div>
+        </div>
+        <div class="timeline-mejorado">
+          <div class="timeline-item">
+            <div class="tl-izq"><span class="tl-fecha">1200 – 1524</span></div>
+            <div class="tl-centro"><div class="tl-dot">🏺</div><div class="tl-linea"></div></div>
+            <div class="tl-der"><div class="tl-card"><h4>Época Prehispánica</h4><p>Los mayas Cakchiqueles usaban el Saúco como planta medicinal, especialmente para tratar fiebres y afecciones respiratorias en el altiplano.</p><span class="tl-tag">Uso ancestral</span></div></div>
+          </div>
+          <div class="timeline-item">
+            <div class="tl-izq"><span class="tl-fecha">1524 – 1821</span></div>
+            <div class="tl-centro"><div class="tl-dot">🕊️</div><div class="tl-linea"></div></div>
+            <div class="tl-der"><div class="tl-card"><h4>Época Colonial</h4><p>Frailes franciscanos documentaron su uso y mestizaron los conocimientos indígenas con la medicina europea, ampliando sus aplicaciones.</p><span class="tl-tag">Mestizaje cultural</span></div></div>
+          </div>
+          <div class="timeline-item">
+            <div class="tl-izq"><span class="tl-fecha">Siglo XX</span></div>
+            <div class="tl-centro"><div class="tl-dot">🌿</div><div class="tl-linea"></div></div>
+            <div class="tl-der"><div class="tl-card"><h4>Cultivo Comercial</h4><p>Comunidades de Chimaltenango intensifican el cultivo comercial, creando productos derivados que se distribuyen a nivel nacional e internacional.</p><span class="tl-tag">Expansión comercial</span></div></div>
+          </div>
+          <div class="timeline-item">
+            <div class="tl-izq"><span class="tl-fecha">Hoy</span></div>
+            <div class="tl-centro"><div class="tl-dot">✨</div></div>
+            <div class="tl-der"><div class="tl-card tl-card-activo"><h4>Economía Sostenible</h4><p>Más de 200 familias chimaltecas viven de la cosecha artesanal del Saúco, preservando técnicas ancestrales con certificación orgánica.</p><span class="tl-tag tl-tag-activo">Presente</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== DEPARTAMENTO ====== -->
+  <section class="departamento" id="departamento">
+    <div class="dept-inner">
+      <div class="mapa-contenedor">
+        <div class="mapa-header">
+          <span class="mapa-etiqueta">📍 Chimaltenango, Guatemala</span>
+          <p>Altiplano central · 14°39'N, 90°49'O · ~1,800 msnm</p>
+        </div>
+        <div class="mapa-frame">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30893.62!2d-90.8186!3d14.6611!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8589a3c6cbbf9cb7%3A0xa3a42c46fb8b7f34!2sChimaltenango!5e0!3m2!1ses!2sgt!4v1"
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+        <div class="mapa-badges">
+          <span class="mapa-badge verde">🌿 Zona de cultivo principal</span>
+          <span class="mapa-badge lila">⛰️ 1,800 – 2,600 msnm</span>
+          <span class="mapa-badge dorado">🌡️ 12 – 18°C</span>
+        </div>
+      </div>
+      <div class="dept-info">
+        <span class="seccion-etiqueta">Dónde se cosecha</span>
+        <h2 class="seccion-titulo">Raíces chimaltecas, <em>producto auténtico</em></h2>
+        <p class="seccion-texto">
+          Chimaltenango cuenta con condiciones únicas que hacen de su Saúco uno de los más potentes de Centroamérica. La combinación de suelos volcánicos ricos en minerales, lluvias bien distribuidas y temperaturas frescas produce frutos y flores con alta concentración de flavonoides y antocianinas.
+        </p>
+        <ul class="caracteristicas-list">
+          <li><span class="check-icon">✓</span><span><strong>Suelos volcánicos</strong> — Ricos en minerales y materia orgánica, ideales para el crecimiento del Saúco.</span></li>
+          <li><span class="check-icon">✓</span><span><strong>Municipios productores</strong> — San Martín Jilotepeque, Tecpán, Comalapa y Patzicía concentran la mayor producción.</span></li>
+          <li><span class="check-icon">✓</span><span><strong>Cultivo orgánico</strong> — Sin pesticidas ni fertilizantes químicos, respetando las técnicas ancestrales mayas.</span></li>
+          <li><span class="check-icon">✓</span><span><strong>Comercio justo</strong> — Precio justo directamente a las familias campesinas cosechadoras.</span></li>
+          <li><span class="check-icon">✓</span><span><strong>Cosecha manual</strong> — Cada flor y cada baya se recoge a mano para garantizar la máxima calidad.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== GALERIA ====== -->
+  <section class="galeria" id="galeria">
+    <div class="galeria-inner">
+      <div class="galeria-header">
+        <span class="seccion-etiqueta">Nuestro equipo</span>
+        <h2 class="seccion-titulo">Personas reales, <em>producto auténtico</em></h2>
+        <p>Detrás de cada frasco hay una historia real. Conoce a las personas que hacen posible el Saúco Chimaltenango.</p>
+      </div>
+      <div class="galeria-grid">
+        <div class="foto-card">
+          <img src="Sauco/IMAGEN3.jpeg" alt="Sauco Shop" />
+          <div class="foto-overlay"><h4>Sauco Shop</h4><p>Vista desde Chimaltenango</p></div>
+        </div>
+        <div class="foto-card foto-card-logo">
+          <img src="Sauco/IMAGEN2.jpeg" alt="Sauco Shop Logo" />
+          <div class="foto-overlay"><h4>Sauco Shop</h4><p>Desde Chimaltenango</p></div>
+        </div>
+        <div class="foto-card">
+          <img src="Sauco/IMAGEN4.jpeg" alt="Rama de Saúco con bayas" />
+          <div class="foto-overlay"><h4>Bayas de Saúco</h4><p>Sambucus mexicana</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== PRODUCTOS ====== -->
+  <section class="productos" id="productos">
+    <div class="productos-inner">
+      <div class="productos-header">
+        <span class="seccion-etiqueta">Nuestra Tienda</span>
+        <h2 class="seccion-titulo">Productos elaborados con <em>Saúco</em></h2>
+        <p class="seccion-texto">
+          Cada producto es elaborado artesanalmente en Chimaltenango, conservando los nutrientes y compuestos activos naturales del Saúco.
+        </p>
+      </div>
+      <div class="productos-grid-2">
+
+        <!-- PRODUCTO 1 — MERMELADA -->
+        <div class="producto-card-grande">
+          <div class="prod-imagen-wrap">
+            <img src="Sauco/IMAGEN5.jpeg" alt="Mermelada de Saúco" class="prod-imagen-real" />
+            <span class="prod-badge">Artesanal</span>
+          </div>
+          <div class="prod-info">
+            <span class="producto-tag">Alimento · Artesanal</span>
+            <h3>Mermelada de Saúco</h3>
+            <p class="prod-desc">
+              Elaborada con bayas frescas cosechadas en Chimaltenango y azúcar de caña. Perfecta para acompañar pan, queso o yogur. Sin conservantes ni colorantes artificiales.
+            </p>
+            <ul class="prod-features">
+              <li>🌿 100% natural, sin conservantes</li>
+              <li>🏔️ Cosechada en Chimaltenango</li>
+              <li>🫐 Bayas frescas de temporada</li>
+              <li>✋ Elaboración artesanal</li>
+            </ul>
+            <div class="producto-footer">
+              <div class="precio">Q45.00 <small>/ 250g</small></div>
+              <button class="btn-agregar" onclick="agregarCarrito('Mermelada de Saúco')">+ Agregar al carrito</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- PRODUCTO 2 — TÉ DE FLOR -->
+        <div class="producto-card-grande">
+          <div class="prod-imagen-wrap">
+            <img src="Sauco/IMAGEN6.png" alt="Té de Flor de Saúco" class="prod-imagen-real" />
+            <span class="prod-badge prod-badge-verde">Medicinal</span>
+          </div>
+          <div class="prod-info">
+            <span class="producto-tag">Infusión · Medicinal</span>
+            <h3>Té de Flor de Saúco</h3>
+            <p class="prod-desc">
+              Flores blancas deshidratadas del Sambucus mexicana, recolectadas a mano durante la temporada de noviembre a febrero. Aroma floral delicado con notas silvestres únicas del altiplano.
+            </p>
+            <ul class="prod-features">
+              <li>🌸 Flores deshidratadas naturalmente</li>
+              <li>💊 Propiedades medicinales</li>
+              <li>🏔️ Altiplano de Chimaltenango</li>
+              <li>😴 Relajante y antitérmico</li>
+            </ul>
+            <div class="producto-footer">
+              <div class="precio">Q35.00 <small>/ 50g</small></div>
+              <button class="btn-agregar btn-te" onclick="agregarCarrito('Té de Flor de Saúco')">+ Agregar al carrito</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== BENEFICIOS ====== -->
+  <section class="beneficios" id="beneficios">
+    <div class="beneficios-inner">
+      <span class="seccion-etiqueta">Propiedades naturales</span>
+      <h2 class="seccion-titulo">¿Por qué el <em>Saúco</em>?</h2>
+      <p class="seccion-texto">
+        El Saúco es reconocido mundialmente por su potente perfil fitoquímico. Las investigaciones modernas confirman lo que los mayas ya sabían hace siglos.
+      </p>
+      <div class="beneficios-grid">
+        <div class="beneficio-item"><span class="bene-icono">🛡️</span><h4>Inmunoestimulante</h4><p>Sus flavonoides y antocianinas potencian las defensas naturales del organismo frente a virus y bacterias.</p></div>
+        <div class="beneficio-item"><span class="bene-icono">🫁</span><h4>Expectorante</h4><p>Alivia la tos, la bronquitis y las afecciones del tracto respiratorio superior de forma natural.</p></div>
+        <div class="beneficio-item"><span class="bene-icono">🔥</span><h4>Antiinflamatorio</h4><p>Reduce la inflamación sistémica y ayuda en el tratamiento de artritis, reumatismo y dolores musculares.</p></div>
+        <div class="beneficio-item"><span class="bene-icono">🌡️</span><h4>Antitérmico</h4><p>Propiedades diaforéticas que favorecen la sudoración y la reducción natural de la fiebre.</p></div>
+        <div class="beneficio-item"><span class="bene-icono">🫀</span><h4>Cardioprotector</h4><p>Los polifenoles del Saúco contribuyen a mantener la salud cardiovascular y la presión arterial.</p></div>
+        <div class="beneficio-item"><span class="bene-icono">✨</span><h4>Antioxidante</h4><p>Alto contenido de vitamina C y polifenoles que combaten el estrés oxidativo y el envejecimiento celular.</p></div>
+        <div class="beneficio-item"><span class="bene-icono">😴</span><h4>Relajante</h4><p>Las flores tienen propiedades calmantes que ayudan a reducir la ansiedad y mejorar el descanso nocturno.</p></div>
+        <div class="beneficio-item"><span class="bene-icono">🩺</span><h4>Diurético</h4><p>Favorece la función renal y la eliminación de toxinas, apoyando la salud del sistema urinario.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== PROCESO ====== -->
+  <section class="proceso">
+    <div class="proceso-inner">
+      <div style="text-align:center; margin-bottom:10px;">
+        <span class="seccion-etiqueta">Del campo a tu hogar</span>
+        <h2 class="seccion-titulo">Proceso de <em>cosecha artesanal</em></h2>
+      </div>
+      <div class="proceso-steps">
+        <div class="paso"><div class="paso-num">1</div><h4>Siembra & Cultivo</h4><p>Plantación de esquejes seleccionados en terrenos volcánicos de Chimaltenango entre noviembre y enero.</p></div>
+        <div class="paso"><div class="paso-num">2</div><h4>Cosecha Manual</h4><p>Recolección a mano de flores (dic-feb) y bayas maduras (mar-may) por familias campesinas locales.</p></div>
+        <div class="paso"><div class="paso-num">3</div><h4>Secado Natural</h4><p>Flores y frutos se secan al aire libre bajo sombra para preservar sus compuestos activos sin calor excesivo.</p></div>
+        <div class="paso"><div class="paso-num">4</div><h4>Elaboración</h4><p>Procesamiento artesanal en pequeños talleres comunitarios certificados, sin químicos ni conservantes.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CTA ====== -->
+  <section class="cta-section">
+    <h2>¿Listo para probar el Saúco chimalteco?</h2>
+    <p>Lleva a tu hogar lo mejor de las tierras altas de Guatemala. Envíos a todo el país.</p>
+    <a href="#productos" class="btn-primary" style="font-size:1rem; padding:18px 50px;">Ver todos los productos →</a>
+  </section>
+
+  <!-- ====== FOOTER ====== -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="nav-logo" style="margin-bottom:16px; display:flex;">
+          <img src="Sauco/IMAGEN1.jpeg" alt="Saúco" class="nav-icono" />
+          <span style="color:var(--crema);">Saúco <em style="color:var(--lila-claro);">Shop</em></span>
+        </a>
+        <p>Productos naturales elaborados artesanalmente en Chimaltenango, Guatemala. Cuidando tu salud con el poder de la naturaleza maya.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Productos</h5>
+        <ul>
+          <li><a href="#">Mermelada de Saúco</a></li>
+          <li><a href="#">Té de Flor de Saúco</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Información</h5>
+        <ul>
+          <li><a href="#">Sobre el Saúco</a></li>
+          <li><a href="#">Cómo se cosecha</a></li>
+          <li><a href="#">Chimaltenango</a></li>
+          <li><a href="#">Beneficios</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contacto</h5>
+        <ul>
+          <li><a href="#">📍 Chimaltenango, Guatemala</a></li>
+          <li><a href="#">📞 +502 4000-0000</a></li>
+          <li><a href="#">✉️ info@saucoshop.gt</a></li>
+          <li><a href="#">🕒 Lun–Vie 8am–5pm</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 Saúco Shop · Chimaltenango. Todos los derechos reservados.</p>
+      <p>Hecho con <span>♥</span> en Guatemala</p>
+    </div>
+  </footer>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast">✅ Producto agregado al carrito</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
